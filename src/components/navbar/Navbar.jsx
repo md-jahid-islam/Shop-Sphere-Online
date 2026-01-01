@@ -3,9 +3,9 @@ import { CiSearch, CiShoppingCart } from "react-icons/ci";
 import { HiOutlineMenuAlt3, HiOutlineX } from "react-icons/hi";
 import { Link } from "react-router";
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false); // Mobile menu
-  const [searchOpen, setSearchOpen] = useState(false); // Mobile search input
+ const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false); 
+  const [searchOpen, setSearchOpen] = useState(false);
 
   return (
     <>
@@ -48,23 +48,17 @@ const Navbar = () => {
               </div>
 
               {/* Mobile search toggle */}
-              <button
-                className="md:hidden text-2xl"
-                onClick={() => setSearchOpen(!searchOpen)}
-              >
-                <CiSearch />
+              <button className="md:hidden text-2xl" onClick={() => setSearchOpen(!searchOpen)}>
+              <CiSearch />
               </button>
 
               {/* Cart */}
               <Link to="/cart">
-                <CiShoppingCart className="text-2xl hover:text-red-600 transition" />
+              <CiShoppingCart className="text-2xl hover:text-red-600 transition" />
               </Link>
 
               {/* Mobile menu button */}
-              <button
-                className="lg:hidden text-3xl ml-2"
-                onClick={() => setIsOpen(!isOpen)}
-              >
+              <button className="lg:hidden text-3xl ml-2" onClick={() => setIsOpen(!isOpen)}>
                 {isOpen ? <HiOutlineX /> : <HiOutlineMenuAlt3 />}
               </button>
             </div>
@@ -74,20 +68,12 @@ const Navbar = () => {
         {/* Mobile Search Input */}
         {searchOpen && (
           <div className="md:hidden px-4 pb-2">
-            <input
-              type="text"
-              placeholder="Search..."
-              className="w-full border rounded-full px-10 py-2 text-sm focus:ring-2 focus:ring-red-500 outline-none"
-            />
+            <input type="text" placeholder="Search..." className="w-full border rounded-full px-10 py-2 text-sm focus:ring-2 focus:ring-red-500 outline-none"/>
           </div>
         )}
 
         {/* Mobile Slide Menu */}
-        <div
-          className={`lg:hidden fixed top-0 right-0 h-full w-3/4 bg-white shadow-lg transform transition-transform duration-300 ${
-            isOpen ? "translate-x-0" : "translate-x-full"
-          }`}
-        >
+        <div className={`lg:hidden fixed top-0 right-0 h-full w-3/4 bg-white shadow-lg transform transition-transform duration-300 ${isOpen ? "translate-x-0" : "translate-x-full" }`}>
           <ul className="flex flex-col gap-5 p-6 text-base font-medium mt-16">
             <li><Link to="/headphonePage" onClick={() => setIsOpen(false)}>Headphone</Link></li>
             <li><Link to="/speakers" onClick={() => setIsOpen(false)}>Speakers</Link></li>
@@ -106,6 +92,6 @@ const Navbar = () => {
       <div className="pt-16"></div>
     </>
   );
-};
+ };
 
-export default Navbar;
+ export default Navbar;

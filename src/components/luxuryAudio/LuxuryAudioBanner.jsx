@@ -53,7 +53,7 @@ import { Link } from "react-router";
       <Slider {...settings}>
         {banners.map((banner) => (
           <div key={banner.id}>
-            <div className="h-[300px] sm:h-[400px] md:h-[500px] lg:h-[400px] xl:h-[400px] rounded-2xl mt-[49px] bg-center bg-cover flex items-center justify-center relative"
+            <div className="h-[300px] sm:h-[400px] md:h-[500px] lg:h-[400px] xl:h-[400px] rounded-2xl bg-center bg-cover flex items-center justify-center relative"
               style={{ backgroundImage: `url(${banner.img})` }}
               data-aos="fade-up" >
               <div className="text-center px-4">
