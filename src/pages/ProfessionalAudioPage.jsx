@@ -1,17 +1,127 @@
-import React from 'react'
-import Breadcrumb from '../components/breadcrumb/Breadcrumb'
+import React from "react";
+import Breadcrumb from "../components/breadcrumb/Breadcrumb";
 
- // ========== Professional Audio Page ========= // 
- function ProfessionalAudioPage() {
+const proAudioProducts = [
+  {
+    id: 1,
+    name: "JBL EON 715",
+    price: "$649",
+    img: "/images/pro1.png",
+  },
+  {
+    id: 2,
+    name: "JBL PRX ONE",
+    price: "$1,699",
+    img: "/images/pro2.png",
+  },
+  {
+    id: 3,
+    name: "JBL SRX835P",
+    price: "$2,399",
+    img: "/images/pro3.png",
+  },
+  {
+    id: 4,
+    name: "JBL VRX932LA-1",
+    price: "$3,999",
+    img: "/images/pro4.png",
+  },
+];
+
+function ProfessionalAudioPage() {
   return (
     <>
       <Breadcrumb />
-      <div className='flex gap-2.5'>
-        <div className='flex flex-wrap gap-2.5'>
-        </div>
-      </div>
-    </>
-  )
- }
 
- export default ProfessionalAudioPage
+      {/* ===== Hero Section ===== */}
+      <section className="bg-black text-white py-20 px-4">
+        <div className="max-w-7xl mx-auto text-center">
+          <h1 className="text-3xl md:text-5xl font-bold mb-4">
+            JBL Professional Audio
+          </h1>
+          <p className="text-gray-400 max-w-xl mx-auto mb-6">
+            Trusted by studios, stages & venues worldwide.
+          </p>
+          <button className="bg-orange-500 px-6 py-3 rounded font-semibold hover:bg-orange-600 transition">
+            Explore Pro Gear
+          </button>
+        </div>
+      </section>
+
+      {/* ===== Use Case Highlights ===== */}
+      <section className="py-12 px-4 bg-gray-100">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          {[
+            "Live Performance",
+            "Studio Monitoring",
+            "Touring & Events",
+            "Commercial Installations",
+          ].map((use, i) => (
+            <div
+              key={i}
+              className="bg-white p-6 rounded-lg hover:shadow-lg transition"
+            >
+              <h3 className="font-semibold text-gray-800">{use}</h3>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ===== Product Grid ===== */}
+      <section className="py-16 px-4">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">
+            Professional Solutions
+          </h2>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+            {proAudioProducts.map((item) => (
+              <div
+                key={item.id}
+                className="group border rounded-lg overflow-hidden bg-white hover:shadow-xl transition"
+              >
+                {/* Image */}
+                <div className="bg-gray-100 p-6 flex items-center justify-center">
+                  <img
+                    src={item.img}
+                    alt={item.name}
+                    className="h-36 group-hover:scale-110 transition duration-300"
+                  />
+                </div>
+
+                {/* Content */}
+                <div className="p-4 text-center">
+                  <h3 className="font-semibold text-gray-800 mb-1">
+                    {item.name}
+                  </h3>
+                  <p className="text-orange-500 font-bold mb-3">
+                    {item.price}
+                  </p>
+
+                  <button className="w-full py-2 text-sm font-semibold border border-black rounded hover:bg-black hover:text-white transition">
+                    View Details
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== CTA Section ===== */}
+      <section className="bg-orange-500 text-white py-14 text-center px-4">
+        <h2 className="text-3xl font-bold mb-3">
+          Power Your Performance
+        </h2>
+        <p className="mb-6">
+          Industry-leading sound solutions for professionals.
+        </p>
+        <button className="bg-black px-8 py-3 rounded font-semibold hover:bg-gray-900 transition">
+          Get Professional Gear
+        </button>
+      </section>
+    </>
+  );
+}
+
+export default ProfessionalAudioPage;

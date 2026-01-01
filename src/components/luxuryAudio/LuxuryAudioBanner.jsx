@@ -7,30 +7,34 @@ import "slick-carousel/slick/slick-theme.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router";
 
- // ======== Luxury Audio Banner ======== // 
- function LuxuryAudioBanner() {
+// ======== Luxury Audio Banner ======== //
+function LuxuryAudioBanner() {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
 
-   // ========= banners =========== // 
+  // ========= banners =========== //
   const banners = [
     { id: 1, img: "image/LUXA-CAT-INDIA-DES.png" },
     { id: 2, img: "image/Headphones-banner.png" },
     { id: 3, img: "image/Speakers-cat-DES.jpg" },
   ];
 
- // ======= NextArrow =======  // 
+  // ======= NextArrow =======  //
   const NextArrow = ({ onClick }) => (
-    <div className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full cursor-pointer z-10 transition"
-      onClick={onClick} >
+    <div
+      className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full cursor-pointer z-10 transition"
+      onClick={onClick}
+    >
       <FaChevronRight className="text-lg sm:text-xl" />
     </div>
   );
 
   const PrevArrow = ({ onClick }) => (
-    <div className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full cursor-pointer z-10 transition"
-      onClick={onClick} >
+    <div
+      className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full cursor-pointer z-10 transition"
+      onClick={onClick}
+    >
       <FaChevronLeft className="text-lg sm:text-xl" />
     </div>
   );
@@ -49,38 +53,46 @@ import { Link } from "react-router";
 
   return (
     <>
-    <section className="relative w-full">
-      <Slider {...settings}>
-        {banners.map((banner) => (
-          <div key={banner.id}>
-            <div className="h-[300px] sm:h-[400px] md:h-[500px] lg:h-[400px] xl:h-[400px] rounded-2xl bg-center bg-cover flex items-center justify-center relative"
-              style={{ backgroundImage: `url(${banner.img})` }}
-              data-aos="fade-up" >
-              <div className="text-center px-4">
-                <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold drop-shadow-lg"
-                  data-aos="zoom-in"
-                  data-aos-delay="300" >
-                  Luxury Audio Collection
-                </h2>
-                <p className="text-gray-200 mt-4 text-sm sm:text-base md:text-lg max-w-md mx-auto"
-                  data-aos="fade-up"
-                  data-aos-delay="500" >
-                  Experience unparalleled sound quality with our premium audio products.
-                </p>
-                <Link className="mt-6 px-6 py-3 bg-orange-500 text-white rounded-2xl hover:bg-orange-600 transition"
-                  data-aos="fade-up"
-                  data-aos-delay="700" >
-                  Shop Now
-                </Link>
+      <section className="relative w-full">
+        <Slider {...settings}>
+          {banners.map((banner) => (
+            <div key={banner.id}>
+              <div
+                className="h-[300px] sm:h-[400px] md:h-[500px] lg:h-[400px] xl:h-[400px] rounded-2xl bg-center bg-cover flex items-center justify-center relative"
+                style={{ backgroundImage: `url(${banner.img})` }}
+                data-aos="fade-up"
+              >
+                <div className="text-center px-4">
+                  <h2
+                    className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold drop-shadow-lg"
+                    data-aos="zoom-in"
+                    data-aos-delay="300"
+                  >
+                    Luxury Audio Collection
+                  </h2>
+                  <p
+                    className="text-gray-200 mt-4 text-sm sm:text-base md:text-lg max-w-md mx-auto"
+                    data-aos="fade-up"
+                    data-aos-delay="500"
+                  >
+                    Experience unparalleled sound quality with our premium audio
+                    products.
+                  </p>
+                  <Link
+                    className="mt-6 px-6 py-3 bg-orange-500 text-white rounded-2xl hover:bg-orange-600 transition"
+                    data-aos="fade-up"
+                    data-aos-delay="700"
+                  >
+                    Shop Now
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </Slider>
-    </section>    
+          ))}
+        </Slider>
+      </section>
     </>
   );
- }
+}
 
- export default LuxuryAudioBanner;
- 
+export default LuxuryAudioBanner;

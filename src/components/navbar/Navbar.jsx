@@ -15,9 +15,9 @@ import { Link } from "react-router";
 
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2">
-              <img src="/image/jbl.png" alt="JBL" className="w-10 h-10 object-contain" />
+              <img src="/image/shop.png" alt="JBL" className="w-10 h-10 object-contain rounded-full " />
               <h1 className="text-xl font-bold">
-                JBL<span className="text-red-600">!</span>
+                Shop-Sphere-Online<span className="text-red-600">!</span>
               </h1>
             </Link>
 
