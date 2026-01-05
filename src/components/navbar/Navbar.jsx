@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { CiSearch, CiShoppingCart } from "react-icons/ci";
 import { HiOutlineMenuAlt3, HiOutlineX } from "react-icons/hi";
@@ -50,9 +49,8 @@ const Navbar = () => {
             <li><Link to="#">🏠 Choose an address</Link></li>
             <li><Link to="#">Become A Seller</Link></li>
             <li><Link to="#">Help & Support</Link></li>
-            <li><Link to="#">Language</Link></li>
-            <li><Link to="#">Login</Link></li>
-            <li><Link to="#">Sign Up</Link></li>
+            <li><Link to="/Login">Login</Link></li>
+            <li><Link to="/Registrations">Sign Up</Link></li>
           </ul>
 
           {/* Mobile Top Toggle */}
@@ -71,14 +69,13 @@ const Navbar = () => {
             <li><Link to="#">🏠 Choose an address</Link></li>
             <li><Link to="#">Become A Seller</Link></li>
             <li><Link to="#">Help & Support</Link></li>
-            <li><Link to="#">Language</Link></li>
             <li><Link to="#">Login</Link></li>
             <li><Link to="#">Sign Up</Link></li>
           </ul>
         )}
       </div>
 
-      {/* Main Navbar */}
+     {/* Main Navbar */}
       <nav className={`fixed top-12 left-0 w-full bg-white shadow-md z-50 transition-transform duration-300 ${
           showMainBar ? "translate-y-0" : "-translate-y-full"}`}>
         <div className="max-w-7xl mx-auto px-4">
@@ -120,7 +117,7 @@ const Navbar = () => {
               </button>
 
               {/* Cart */}
-              <Link to="/cart">
+              <Link to="/Card">
                 <CiShoppingCart className="text-2xl hover:text-red-600 transition" />
               </Link>
 

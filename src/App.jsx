@@ -11,6 +11,10 @@ import AccessoriesPage from './pages/AccessoriesPage'
 import SoundOfCelebrationsPage from './pages/SoundOfCelebrationsPage'
 import ClearanceSalePage from './pages/ClearanceSalePage'
 import HomePage from './pages/HomePage'
+import Login from './pages/Login'
+import Registrations from './pages/Registrations'
+import Card from './pages/Card'
+import ForgotPassword from './pages/ForgotPassword'
  
  // ========= App ========= // 
  function App() {
@@ -21,6 +25,10 @@ import HomePage from './pages/HomePage'
           <Route path='/' element={<Layout />}>
             <Route index element={<HomePage />} />
             <Route path='headphonePage' element={<HeadphonePage />} />
+            <Route path='/Login' element={<Login/>} />
+            <Route path='/Registrations' element={<Registrations/>} />
+            <Route path='/Card' element={<Card/>} />
+            <Route path='/ForgotPassword' element={<ForgotPassword/>} />
             <Route path='speakers' element={<SpeakersPage />} />
             <Route path='soundbar' element={<SoundbarPage />} />
             <Route path='luxuryAudio' element={<LuxuryAudioPage />} />
@@ -30,9 +38,9 @@ import HomePage from './pages/HomePage'
             <Route path='soundOfCelebrations' element={<SoundOfCelebrationsPage />} />
             <Route path='clearanceSale' element={<ClearanceSalePage />} />
           </Route>
-
         </Routes>
       </BrowserRouter>
+
     </>
   )
  }
